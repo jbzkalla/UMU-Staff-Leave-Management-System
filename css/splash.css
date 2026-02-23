@@ -1,0 +1,150 @@
+:root {
+    --umu-maroon: #912a22;
+    --umu-gold: #ffc107;
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+}
+
+.splash-container {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, var(--umu-maroon) 0%, #4a0e0a 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.splash-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/pattern.png');
+    /* Subtle pattern overlay if exists */
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.splash-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 3rem;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-out;
+}
+
+.splash-logo {
+    height: 120px;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+}
+
+.splash-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.splash-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+.btn-group-splash {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.btn-splash {
+    padding: 12px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+    display: inline-block;
+}
+
+.btn-splash-primary {
+    background-color: var(--umu-gold);
+    color: #333;
+    border: 2px solid var(--umu-gold);
+}
+
+.btn-splash-primary:hover {
+    background-color: transparent;
+    color: var(--umu-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 193, 7, 0.3);
+}
+
+.btn-splash-outline {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-splash-outline:hover {
+    background-color: white;
+    color: var(--umu-maroon);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.splash-footer {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .splash-title {
+        font-size: 1.8rem;
+    }
+
+    .btn-group-splash {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .btn-splash {
+        width: 100%;
+    }
+}
